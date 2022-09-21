@@ -2,11 +2,13 @@ export default {
   COLORS: {
     WHITE: '#FFFFFF',
 
-    GREEN_700: '#00875F',
-    GREEN_500: '#00B37E',
+    GREEN_MID: '#CBE4B4',
+    GREEN_LIGHT: '#E5F0DB',
+    GREEN_DARK: '#639339',
 
-    RED: '#F75A68',
-    RED_DARK: '#AA2834',
+    RED_MID: '#F3BABD',
+    RED_DARK: '#BF3B44',
+    RED_LIGHT: '#F4E6E7',
 
     GRAY_700: '#121214',
     GRAY_600: '#202024',
@@ -21,9 +23,8 @@ export default {
     BOLD: 'Roboto_700Bold'
   },
   FONT_SIZE: {
-    SM: 14,
-    MD: 16,
-    LG: 18,
-    XL: 24
+    SM: 12,
+    MD: 14,
+    LG: 16,
   }
 };
