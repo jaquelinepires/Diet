@@ -1,12 +1,18 @@
 import styled, { css } from 'styled-components/native'
 import { ArrowLeft } from 'phosphor-react-native';
 
-export const HeaderContainer = styled.View`
+export type ButtonTypeStyleProps = 'GREEN' | 'GRAY';
+
+type Props = {
+  type: ButtonTypeStyleProps;
+}
+
+export const HeaderContainer = styled.View<Props>`
   width: 100%;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: ${({ theme }) => theme.COLORS.GREEN_LIGHT};
+  background-color: ${({ theme, type }) => type == 'GREEN' ? theme.COLORS.GREEN_LIGHT: theme.COLORS.GRAY_100};
   padding: 32px 24px;
 `
 

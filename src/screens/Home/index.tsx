@@ -1,10 +1,19 @@
-import { Percent } from '../../components/Percent';
-import { Avatar, Container, HomeHeader, Logo, Texto } from './styles';
+import { Avatar, Container, HomeContent, HomeHeader, HomeList, HomeListHeader, HomeListHeaderButton, HomeListHeaderButtonIcon, HomeListHeaderButtonText, HomeListHeaderTitle, Logo, StatisticsButton, StatisticsButtonIcon, StatisticsButtonText, StatisticsButtonTitle } from './styles';
 import logoImg from '../../assets/Logo.png';
 import avatarImg from '../../assets/avatar.png';
-import { ButtonAddMeal } from '../../components/ButtonAddMeal';
+import { useNavigation } from "@react-navigation/native";
 
 export function Home() {
+  
+  const navigation = useNavigation()
+
+  function handleNavigateToStatistics() {
+    navigation.navigate('statistics')
+  }
+  function handleNavigateToCreateMeal() {
+    navigation.navigate('createMeal')
+  }
+
   return (
     <Container>
         <HomeHeader>
@@ -12,9 +21,24 @@ export function Home() {
         <Avatar source={avatarImg} />
       </HomeHeader>
 
-      <Percent />
-      <ButtonAddMeal />
+      <StatisticsButton onPress={handleNavigateToStatistics}>
+        <StatisticsButtonIcon />
+        <StatisticsButtonTitle>90,86%</StatisticsButtonTitle>
+        <StatisticsButtonText>
+          das refeições dentro da dieta
+        </StatisticsButtonText>
+      </StatisticsButton>
 
+      <HomeContent>
+        <HomeListHeader>
+          <HomeListHeaderTitle>Refeições</HomeListHeaderTitle>
+          <HomeListHeaderButton onPress={handleNavigateToCreateMeal}>
+            <HomeListHeaderButtonIcon />
+            <HomeListHeaderButtonText>Nova refeição</HomeListHeaderButtonText>
+          </HomeListHeaderButton>
+        </HomeListHeader>
+        <HomeList />
+      </HomeContent>
     </Container>
   );
 }
