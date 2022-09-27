@@ -2,9 +2,17 @@ import styled, { css } from 'styled-components/native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { ArrowLeft } from 'phosphor-react-native'
 
-export const StatisticsContainer = styled(SafeAreaView)`
+type Props = {
+  variant?: 'good' | 'bad';
+  }
+
+export const StatisticsContainer = styled(SafeAreaView)<Props>`
   flex: 1;
   background-color: ${({ theme }) => theme.COLORS.GREEN_LIGHT};
+  ${({ theme, variant }) => css`
+    background-color: ${variant === 'good' ? theme.COLORS.RED_LIGHT : theme.COLORS.GREEN_LIGHT};
+  `};
+
 `
 
 export const StatisticsHeader = styled.View`

@@ -12,7 +12,11 @@ import {
   StatisticsContent,
 } from './styles';
 
-export function Statistics() {
+type StatisticsProps = {
+variant?: 'good' | 'bad';
+}
+
+export function Statistics({variant="good"}: StatisticsProps) {
   const navigation = useNavigation();
 
   function handleBackToHome() {
@@ -21,7 +25,7 @@ export function Statistics() {
 
   return (
     <StatisticsContainer>
-      <StatisticsHeader>
+      <StatisticsHeader  variant={variant}>
         <StatisticsBackButton onPress={handleBackToHome}>
           <StatisticsBackIcon />
         </StatisticsBackButton>
