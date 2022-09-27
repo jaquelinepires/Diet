@@ -16,11 +16,28 @@ export default {
     GRAY_400: '#323238',
     GRAY_300: '#7C7C8A',
     GRAY_200: '#DDDEDF',
-    GRAY_100: '#EFF0F0'
+    GRAY_100: '#EFF0F0',
+
+    green: '#32b768',
+    green_light: '#2B7A4B',
+    green_dark: '#DAF2E4',
+
+    height: '#52665A',
+    body_dark: '#738078',
+    body_light: '#AAB2AD',
+
+    background: '#FFF',
+    shape: '#F0F0F0',
+    gray: '#CFCFCF',
+
+    blue: '#3D7199',
+    blue_light: '#EBF6FF',
+
+
   },
   FONT_FAMILY: {
-    REGULAR: 'Roboto_400Regular',
-    BOLD: 'Roboto_700Bold'
+    REGULAR: 'Jost_400Regular',
+    BOLD: 'Jost_600SemiBold'
   },
   FONT_SIZE: {
     XS: 12,
