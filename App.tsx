@@ -1,18 +1,14 @@
 import { ThemeProvider } from 'styled-components/native';
-import { useFonts, Roboto_400Regular, Roboto_700Bold } from '@expo-google-fonts/roboto';
+import { useFonts, Jost_400Regular, Jost_600SemiBold} from '@expo-google-fonts/jost';
 import theme from './src/theme';
 import { StatusBar } from 'react-native';
 import { Routes } from './src/routes'
-import { AuthProvider, useAuth } from './src/hooks/auth';
 import { Load } from './src/components/Load';
 
 export default function App() {
- const [ fontsLoaded ] = useFonts({ Roboto_400Regular, Roboto_700Bold })
-
- const { userStorageLoading } = useAuth()
- 
- 
- if (!fontsLoaded ||userStorageLoading ) {
+ const [ fontsLoaded ] = useFonts({ Jost_400Regular, Jost_600SemiBold })
+  
+ if (!fontsLoaded) {
   return null;
 }
 
@@ -23,9 +19,7 @@ export default function App() {
         backgroundColor= "transparent"
         translucent
         />
-      <AuthProvider>
       {fontsLoaded ? <Routes /> : <Load />}
-      </AuthProvider>
     </ThemeProvider>
   )
 }

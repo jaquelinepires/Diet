@@ -8,43 +8,6 @@ export const Container = styled(SafeAreaView)`
   padding: 24px;
   background-color: ${({ theme }) => theme.COLORS.WHITE};
 `;
-export const Header = styled.View`
-  width: 100%;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  
-  `;
-export const UserWrapper= styled.View`
-  width: 100%;
-  margin-top: 28px;
-  margin-bottom: 28px;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-`;
-export const UserInfo= styled.View`
-  flex-direction: row;
-  align-items: center;
-`;
-export const Photo= styled.Image`
-  width: 48px;
-  height: 48px;
-  border-radius: 10px;
-`;
-export const User= styled.View`
-  margin-left: 17px;
-`;
-export const UserGreeting= styled.Text`
-  color: ${({theme}) => theme.COLORS.GRAY_600};
-  font-size: ${({theme}) => theme.FONT_SIZE.MD}px;
-  font-family: ${({theme}) => theme.FONT_FAMILY.REGULAR};
-`;
-export const UserName= styled.Text`
-  color: ${({theme}) => theme.COLORS.GRAY_700};
-  font-size: ${({theme}) => theme.FONT_SIZE.MD}px;
-  font-family: ${({theme}) => theme.FONT_FAMILY.BOLD};
-`;
 
 export const Logo = styled.Image``;
 
