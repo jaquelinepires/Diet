@@ -11,6 +11,7 @@ export const StatisticsHeader = styled.View`
   width: 100%;
   align-items: center;
   padding: 32px 24px;
+  
 `
 
 export const StatisticsBackButton = styled.TouchableOpacity`
@@ -34,6 +35,7 @@ export const StatisticsHeaderTitle = styled.Text`
 `
 
 export const StatisticsHeaderSubtitle = styled.Text`
+  
   ${({ theme }) => css`
     color: ${theme.COLORS.GRAY_600};
     font-size: ${theme.FONT_SIZE.SM}px;
@@ -46,10 +48,21 @@ export const StatisticsContent = styled.View`
   background-color: ${({ theme }) => theme.COLORS.WHITE};
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
+  padding: 24px;
 `
 
-export const StatisticsContentTitle = styled.Text``
+export const StatisticsContentTitle = styled.Text`
+  text-align: center;
+  ${({ theme }) => css`
+    font-family: ${theme.FONT_FAMILY.BOLD};
+    font-size: ${theme.FONT_SIZE.MD}px;
+    color: ${theme.COLORS.GRAY_700};
+  `};
+  margin-top: 12px;
+  margin-bottom: 24px;
+`
 
 export const MealsInDietColumContainer = styled.View`
-  justify-content: space-between;
+  flex-direction: row;
+  width: 48%;
 `

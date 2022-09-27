@@ -30,12 +30,12 @@ export function Statistics() {
       </StatisticsHeader>
 
       <StatisticsContent>
-        <StatisticsContentTitle>Meals in diet</StatisticsContentTitle>
-        <StatisticCard number={1} description="Breakfast" />
-        <StatisticCard number={1} description="Breakfast" />
+        <StatisticsContentTitle>Estatística Gerais</StatisticsContentTitle>
+        <StatisticCard number={1} description="melhor sequência de pratos dentro da dieta" />
+        <StatisticCard number={1} description="refeições registradas" />
         <MealsInDietColumContainer>
-          <StatisticCard number={1} description="Breakfast" />
-          <StatisticCard number={2} description="Lunch" />
+          <StatisticCard number={1} description="refeições dentro da dieta" variant="good" style={{ marginRight: "8%" }}/>
+          <StatisticCard number={2} description="refeições fora da dieta" variant="bad" />
         </MealsInDietColumContainer>
       </StatisticsContent>
     </StatisticsContainer>

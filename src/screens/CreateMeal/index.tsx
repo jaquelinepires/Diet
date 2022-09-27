@@ -1,19 +1,28 @@
-import { ButtonSelectYesNo } from '../../components/ButtonSelectYesNo';
+import { useState } from 'react';
+import { Button } from '../../components/Button';
 import { Header } from '../../components/Header';
 import { Input } from '../../components/Input';
+import { TypeButton } from '../../components/TypeButton';
 import { 
   CreateMealContainer,
    CreateMealContent, 
    InputGroup, 
    Form, 
    Label, 
-   InputGroupDate, 
-   ContainerButton}
+   ButtonTypes,
+   InputGroupContainer,
+   InputGroupContent
+  }
    from './styles';
 
 
 export function CreateMeal() {
+  const [selectedType, setSelectedType] = useState('');
   
+  function handleSelectType(type: 'GOOD' | 'BAD') {
+    setSelectedType(type);
+  }
+
   return (
     <CreateMealContainer>
       <Header title='Nova refeição' type="GRAY"/>
@@ -35,27 +44,39 @@ export function CreateMeal() {
         />
         </InputGroup>
 
-        <InputGroupDate>
-        <InputGroup>
+        <InputGroupContainer>
+
+        <InputGroupContent>
         <Label>Data</Label>
         <Input style={{ width: 153}}/>
-      </InputGroup>
+      </InputGroupContent>
 
-      <InputGroup>
+      <InputGroupContent>
         <Label>Hora</Label>
         <Input style={{ width: 153}}/>
-      </InputGroup>
-      </InputGroupDate>
+      </InputGroupContent>
+
+      </InputGroupContainer>
 
 
       <Label>Está dentro da dieta?</Label>
 
-      <ContainerButton>
-      <ButtonSelectYesNo title="Sim" type="YES"/>
-      <ButtonSelectYesNo title="Não" type="NO"/>
-      </ContainerButton>
+      <ButtonTypes>
+      <TypeButton 
+        type="GOOD"
+        title="Sim"
+        onPress={() => handleSelectType('GOOD')}
+        isActive={selectedType === 'GOOD'}
+      />
+            <TypeButton 
+        type="BAD"
+        title="Não"
+        onPress={() => handleSelectType('BAD')}
+        isActive={selectedType === 'BAD'}
+      />
+      </ButtonTypes>
       </Form>
-
+      <Button title="Cadastrar Refeição" />
       </CreateMealContent>
     </CreateMealContainer>
   );

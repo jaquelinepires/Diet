@@ -17,7 +17,8 @@ export const CreateMealContent = styled.View`
 
 export const Form = styled.View`
   width: 100%;
-  padding: 24px;
+  padding: 40px 24px;
+
   `;
 
 export const Label = styled.Text`
@@ -30,15 +31,19 @@ export const InputGroup = styled.View`
   margin-bottom: 24px;
 
 `
-export const InputGroupDate = styled.View`
+export const InputGroupContainer = styled.View`
   flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 24px;
 
 `
+export const InputGroupContent = styled.View`
 
-export const ContainerButton = styled.View`
+`;
+
+export const ButtonTypes = styled.View`
   flex-direction: row;
-
-
+  justify-content: space-between;
 
 `
 
