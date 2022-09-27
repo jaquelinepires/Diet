@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/native';
 import { useState } from 'react';
 import { Button } from '../../components/Button';
 import { Header } from '../../components/Header';
@@ -21,6 +22,12 @@ export function CreateMeal() {
   
   function handleSelectType(type: 'GOOD' | 'BAD') {
     setSelectedType(type);
+  }
+
+  const navigation = useNavigation();
+
+  function handleBackToCreateMealFeedback() {
+    navigation.navigate('createMealFeedback');
   }
 
   return (
@@ -76,7 +83,10 @@ export function CreateMeal() {
       />
       </ButtonTypes>
       </Form>
-      <Button title="Cadastrar Refeição" />
+      <Button 
+        title="Cadastrar Refeição" 
+        onPress={handleBackToCreateMealFeedback}
+        />
       </CreateMealContent>
     </CreateMealContainer>
   );

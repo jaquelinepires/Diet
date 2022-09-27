@@ -1,4 +1,5 @@
 import { useNavigation } from '@react-navigation/native';
+import { ViewProps } from 'react-native';
 import { StatisticCard } from '../../components/StatisticCard';
 import {
   StatisticsHeader,
@@ -12,7 +13,7 @@ import {
   StatisticsContent,
 } from './styles';
 
-type StatisticsProps = {
+type StatisticsProps = ViewProps & {
 variant?: 'good' | 'bad';
 }
 
