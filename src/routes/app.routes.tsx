@@ -3,6 +3,9 @@ import { Home } from '../screens/Home';
 import { Statistics } from '../screens/Statistics';
 import { CreateMeal } from '../screens/CreateMeal';
 import { CreateMealFeedback } from "../screens/CreateMealFeedback";
+import { Welcome } from "../screens/Welcome";
+import { UserIdentification } from "../screens/UserIdentification";
+import { Confirmation } from "../screens/Confirmation";
 
 const { Navigator, Screen } = createNativeStackNavigator();
 
@@ -10,6 +13,18 @@ export function AppRoutes() {
   
   return(
     <Navigator screenOptions={{ headerShown: false}}>
+          <Screen
+        name="welcome"
+        component={Welcome}
+      />
+          <Screen
+        name="userIdentification"
+        component={UserIdentification}
+      />
+          <Screen
+        name="confirmation"
+        component={Confirmation}
+      />
       <Screen
         name="home"
         component={Home}
