@@ -1,31 +1,57 @@
 import { SafeAreaView } from 'react-native-safe-area-context'
 import styled, { css } from "styled-components/native";
-import { ArrowUpRight, Plus } from "phosphor-react-native"
+import { ArrowUpRight, Plus, SignOut } from "phosphor-react-native"
+import { TouchableOpacity } from 'react-native';
 
 export const Container = styled(SafeAreaView)`
   flex: 1;
   padding: 24px;
   background-color: ${({ theme }) => theme.COLORS.WHITE};
 `;
-export const HomeHeader = styled.View`
+export const Header = styled.View`
   width: 100%;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 36px;
+  
+  `;
+export const UserWrapper= styled.View`
+  width: 100%;
+  margin-top: 28px;
+  margin-bottom: 28px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+`;
+export const UserInfo= styled.View`
+  flex-direction: row;
+  align-items: center;
+`;
+export const Photo= styled.Image`
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+`;
+export const User= styled.View`
+  margin-left: 17px;
+`;
+export const UserGreeting= styled.Text`
+  color: ${({theme}) => theme.COLORS.GRAY_600};
+  font-size: ${({theme}) => theme.FONT_SIZE.MD}px;
+  font-family: ${({theme}) => theme.FONT_FAMILY.REGULAR};
+`;
+export const UserName= styled.Text`
+  color: ${({theme}) => theme.COLORS.GRAY_700};
+  font-size: ${({theme}) => theme.FONT_SIZE.MD}px;
+  font-family: ${({theme}) => theme.FONT_FAMILY.BOLD};
 `;
 
 export const Logo = styled.Image``;
 
-export const Avatar = styled.Image`
-  width: 40px;
-  height: 40px;
-  border-radius: 999px;
-  border-width: 2px;
-  border-color: ${({ theme }) => theme.COLORS.GRAY_600};
-`;
+export const LogoutButton = styled(TouchableOpacity)``;
+export const IconSignOut = styled(SignOut)``;
 
-export const StatisticsButton = styled.TouchableOpacity`
+export const StatisticsButton = styled(TouchableOpacity)`
   width: 100%;
   padding: 20px 16px;
   background-color: ${({ theme }) => theme.COLORS.GREEN_LIGHT};

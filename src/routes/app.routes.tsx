@@ -3,9 +3,11 @@ import { Home } from '../screens/Home';
 import { Statistics } from '../screens/Statistics';
 import { CreateMeal } from '../screens/CreateMeal';
 import { CreateMealFeedback } from "../screens/CreateMealFeedback";
+
 const { Navigator, Screen } = createNativeStackNavigator();
 
 export function AppRoutes() {
+  
   return(
     <Navigator screenOptions={{ headerShown: false}}>
       <Screen
