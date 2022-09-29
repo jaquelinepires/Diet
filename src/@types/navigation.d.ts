@@ -6,10 +6,8 @@ export declare global {
       confirmation: undefined
       home: undefined;
       statistics: undefined;
-      createMeal: undefined;
-      createMealFeedback: undefined;
-      signIn: undefined;
-
+      newMeal: undefined;
+      newMealFeedback: undefined;
       }
     }
   }
