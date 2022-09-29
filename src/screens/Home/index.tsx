@@ -2,10 +2,12 @@ import { Avatar, Container, Greeting, Header, HeaderContent, HomeContent, HomeLi
 import { useNavigation } from "@react-navigation/native";
 import avatar  from '../../assets/avatar.png';
 import { LoadAnimation } from '../../components/LoadAnimation';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export function Home() {
   const [isLoading, setIsLoading] = useState(false);
+  const [ userName, setUserName ] = useState<string>()
   const navigation = useNavigation()
 
   function handleNavigateToStatistics() {
@@ -14,6 +16,15 @@ export function Home() {
   function handleNavigateToCreateMeal() {
     navigation.navigate('createMeal')
   }
+
+  useEffect(() => {
+    async function loadStorageUserName() {
+      const user = await AsyncStorage.getItem('@dietDaily:user')
+      setUserName(user || '')
+    }
+
+    loadStorageUserName()
+  }, [])
 
   // if (isLoading) 
   //   return <LoadAnimation /> 
@@ -25,7 +36,7 @@ export function Home() {
       <Header>
         <HeaderContent>
         <Greeting>Olá,</Greeting>
-        <UserName>Jaqueline</UserName>
+        <UserName>{userName}</UserName>
         </HeaderContent>
         <Avatar source={avatar}/>
       </Header>
