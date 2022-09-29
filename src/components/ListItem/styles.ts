@@ -18,7 +18,7 @@ export const Hours = styled.Text`
     ${({ theme }) => css`
         font-family: ${theme.FONT_FAMILY.BOLD};
         font-size: ${theme.FONT_SIZE.SM}px;
-        color: ${theme.COLORS.GRAY_100};
+        color: ${theme.COLORS.body_dark};
     `}
     margin: 14px;
 `
@@ -27,10 +27,9 @@ export const Title = styled.Text`
     ${({ theme }) => css`
         font-family: ${theme.FONT_FAMILY.REGULAR};
         font-size: ${theme.FONT_SIZE.MD}px;
-        color: ${theme.COLORS.GRAY_100}; 
+        color: ${theme.COLORS.body_dark}; 
     `};
     border-left: 1px solid ${({ theme }) => theme.COLORS.GRAY_400}
-    // border-left/right/top/bottom not working in React Native for IOS
 `
 
 export const Circle = styled.View<Props>`
@@ -40,5 +39,5 @@ export const Circle = styled.View<Props>`
     right: 14px;
     border-radius: 50%;
     background-color: ${({ theme, isActive }) => isActive ?
-    theme.COLORS.GREEN_LIGHT : theme.COLORS.GREEN_DARK}
+    theme.COLORS.GREEN_LIGHT : theme.COLORS.RED_DARK}
     `;
