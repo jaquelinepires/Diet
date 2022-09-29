@@ -2,7 +2,7 @@ import { useNavigation } from "@react-navigation/native";
 import { useState } from "react";
 import { KeyboardAvoidingView, Platform, View, TouchableWithoutFeedback, Keyboard, Alert } from "react-native";
 import { useTheme } from "styled-components/native";
-import { ButtonGreen } from "../../components/ButtonGreen";
+import { Button } from "../../components/Button";
 import { Container, Content, Emotion, Footer, Form, Input, Title } from "./styles";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
@@ -56,7 +56,7 @@ export function UserIdentification(){
             onChangeText={handleInputChange}
             />
           <Footer>
-            <ButtonGreen 
+            <Button 
               title="Confirmar"
               onPress={handleSubmit}
               

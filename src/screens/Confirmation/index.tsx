@@ -1,5 +1,5 @@
 import { useNavigation } from '@react-navigation/native';
-import { ButtonGreen } from '../../components/ButtonGreen';
+import { Button } from '../../components/Button';
 import { Container, Content, Emoji, Title, Footer, Subtitle} from './styles';
 
 
@@ -19,7 +19,7 @@ export function Confirmation() {7
           saúde com muito cuidado.
         </Subtitle>
         <Footer>
-          <ButtonGreen title="Começar" onPress={handleMoveOn}/>
+          <Button title="Começar" onPress={handleMoveOn}/>
         </Footer>
       </Content>
     </Container>

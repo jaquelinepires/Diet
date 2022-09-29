@@ -74,3 +74,11 @@ export const MealsInDietColumContainer = styled.View`
   flex-direction: row;
   width: 48%;
 `
+
+export const Container = styled.View``
+export const ChartContainer = styled.View`
+  width: 100%;
+  align-items: center;
+  margin-top: -90px;
+
+`

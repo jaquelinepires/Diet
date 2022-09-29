@@ -16,10 +16,10 @@ export function Welcome() {
       <Title>Gerencie suas saúde de forma fácil</Title>
       <Logo source={ilustra } />
       <Subtitle>Não esqueça mais de saber o que comeu</Subtitle>
-    <ButtonWelcome 
-      title=">"
-      onPress={handleStart}
-    />    
+      <ButtonWelcome 
+        title=">"
+        onPress={handleStart}
+      />    
     </Container>
   );
 }

@@ -2,7 +2,7 @@ import { ViewProps } from 'react-native';
 import {
   StatisticCardContainer,
   StatisticCardNumber,
-  StatisticCardDescription
+  StatisticCardDescription,
 } from './styles';
 
 type StatisticCardProps = ViewProps & {
@@ -18,9 +18,13 @@ export function StatisticCard({
   ...rest
 }: StatisticCardProps) {
   return (
+
+
+
     <StatisticCardContainer variant={variant} {...rest}>
       <StatisticCardNumber>{number}</StatisticCardNumber>
       <StatisticCardDescription>{description}</StatisticCardDescription>
     </StatisticCardContainer>
+
   );
 }
