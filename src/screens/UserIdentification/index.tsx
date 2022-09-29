@@ -1,9 +1,10 @@
 import { useNavigation } from "@react-navigation/native";
 import { useState } from "react";
-import { KeyboardAvoidingView, Platform, View, TouchableWithoutFeedback, Keyboard } from "react-native";
+import { KeyboardAvoidingView, Platform, View, TouchableWithoutFeedback, Keyboard, Alert } from "react-native";
 import { useTheme } from "styled-components/native";
 import { ButtonGreen } from "../../components/ButtonGreen";
 import { Container, Content, Emotion, Footer, Form, Input, Title } from "./styles";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export function UserIdentification(){
   const {COLORS} = useTheme();
@@ -26,7 +27,12 @@ export function UserIdentification(){
   }
 
 
-  function handleSubmit() {
+  async function handleSubmit() {
+    if(!name) 
+    return Alert.alert('Me diz como chamar você 😢')
+
+    await AsyncStorage.setItem('@dietDaily:user', name)
+    
     navigation.navigate('confirmation');
   }
   return (
