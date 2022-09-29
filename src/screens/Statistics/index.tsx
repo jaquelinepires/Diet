@@ -11,6 +11,7 @@ import {
   StatisticsContentTitle,
   MealsInDietColumContainer,
   StatisticsContent,
+  Images,
 } from './styles';
 
 type StatisticsProps = ViewProps & {

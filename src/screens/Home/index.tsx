@@ -1,7 +1,11 @@
-import { Container, HomeContent, HomeList, HomeListHeader, HomeListHeaderButton, HomeListHeaderButtonIcon, HomeListHeaderButtonText, HomeListHeaderTitle,  StatisticsButton, StatisticsButtonIcon, StatisticsButtonText, StatisticsButtonTitle } from './styles';
+import { Avatar, Container, Greeting, Header, HeaderContent, HomeContent, HomeList, HomeListHeader, HomeListHeaderButton, HomeListHeaderButtonIcon, HomeListHeaderButtonText, HomeListHeaderTitle, StatisticsButton, StatisticsButtonIcon, StatisticsButtonText, StatisticsButtonTitle, UserName } from './styles';
 import { useNavigation } from "@react-navigation/native";
+import avatar  from '../../assets/avatar.png';
+import { LoadAnimation } from '../../components/LoadAnimation';
+import { useState } from 'react';
 
 export function Home() {
+  const [isLoading, setIsLoading] = useState(false);
   const navigation = useNavigation()
 
   function handleNavigateToStatistics() {
@@ -11,8 +15,20 @@ export function Home() {
     navigation.navigate('createMeal')
   }
 
-  return (
+  // if (isLoading) 
+  //   return <LoadAnimation /> 
+  
+    return (
+      <>
+      { isLoading ? <LoadAnimation /> :
     <Container>
+      <Header>
+        <HeaderContent>
+        <Greeting>Olá,</Greeting>
+        <UserName>Jaqueline</UserName>
+        </HeaderContent>
+        <Avatar source={avatar}/>
+      </Header>
 
       <StatisticsButton onPress={handleNavigateToStatistics}>
         <StatisticsButtonIcon />
@@ -33,5 +49,8 @@ export function Home() {
         <HomeList />
       </HomeContent>
     </Container>
+    }
+    </>
   );
 }
+

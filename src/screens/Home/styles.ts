@@ -9,15 +9,40 @@ export const Container = styled(SafeAreaView)`
   background-color: ${({ theme }) => theme.COLORS.WHITE};
 `;
 
-export const Logo = styled.Image``;
+export const Header = styled.View`
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  margin-top: 24px;
+  padding: 20px;
+`;
+export const HeaderContent = styled.View`
+  
+`;
+export const Greeting = styled.Text`
+  font-size: 24px;
+  font-family: ${({ theme }) => theme.FONT_FAMILY.REGULAR};
+  color: ${({ theme }) => theme.COLORS.height};
+`;
+export const UserName = styled.Text`
+  font-size: 24px;
+  font-family: ${({ theme }) => theme.FONT_FAMILY.BOLD};
+  line-height: 40px;
+  color: ${({ theme }) => theme.COLORS.height};
+`;
+export const Avatar = styled.Image`
+  width: 48px;
+  height: 48px;
+`;
 
-export const LogoutButton = styled(TouchableOpacity)``;
 export const IconSignOut = styled(SignOut)``;
 
 export const StatisticsButton = styled(TouchableOpacity)`
   width: 100%;
   padding: 20px 16px;
-  background-color: ${({ theme }) => theme.COLORS.GREEN_LIGHT};
+  background-color: ${({ theme }) => theme.COLORS.green_light};
   border-radius: 8px;
   align-items: center;
   justify-content: center;
@@ -34,7 +59,7 @@ export const StatisticsButtonIcon = styled(ArrowUpRight).attrs(({ theme }) => {
 
 export const StatisticsButtonTitle = styled.Text`
   ${({ theme }) => css`
-    color: ${theme.COLORS.GRAY_700};
+    color: ${theme.COLORS.height};
     font-size: ${theme.FONT_SIZE.XXL}px;
     font-family: ${theme.FONT_FAMILY.BOLD};
   `};
@@ -66,7 +91,7 @@ export const HomeListHeaderTitle = styled.Text`
 `;
 
 export const HomeListHeaderButton = styled.TouchableOpacity`
-  background-color: ${({ theme }) => theme.COLORS.GRAY_600};
+  background-color: ${({ theme }) => theme.COLORS.green};
   flex-direction: row;
   align-items: center;
   justify-content: center;

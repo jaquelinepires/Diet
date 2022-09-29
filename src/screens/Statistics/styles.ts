@@ -14,7 +14,7 @@ export const StatisticsContainer = styled(SafeAreaView)<Props>`
   `};
 
 `
-
+export const Images = styled.Image``
 export const StatisticsHeader = styled.View`
   width: 100%;
   align-items: center;
