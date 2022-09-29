@@ -6,7 +6,7 @@ import { Container, Content, Emoji, Title, Footer, Subtitle} from './styles';
 export function Confirmation() {7
   const navigation = useNavigation();
 
-  function handleHome() {
+  function handleMoveOn() {
     navigation.navigate('home');
   }
   return (
@@ -19,7 +19,7 @@ export function Confirmation() {7
           saúde com muito cuidado.
         </Subtitle>
         <Footer>
-          <ButtonGreen title="Começar" onPress={handleHome}/>
+          <ButtonGreen title="Começar" onPress={handleMoveOn}/>
         </Footer>
       </Content>
     </Container>
