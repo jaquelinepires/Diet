@@ -1,28 +1,17 @@
-import { TouchableOpacity } from "react-native";
-import styled, {css} from "styled-components/native";
-import { MaterialIcons } from '@expo/vector-icons';
+import styled from 'styled-components/native';
+import { TouchableOpacity } from 'react-native'
 
 export const Container = styled(TouchableOpacity)`
-  width: 327px;
-  height: 50px;
-  margin: 0 auto;
-  background-color: ${({ theme}) => theme.COLORS.GRAY_500};
+  background-color: ${({ theme }) => theme.COLORS.green};
   justify-content: center;
   align-items: center;
-  border-radius: 6px;
-  padding: 16px;  
+  border-radius: 16px;
+  height: 56px;
+
 `;
 
 export const Title = styled.Text`
-  ${({ theme }) => css`
-    font-size: ${ theme.FONT_SIZE.MD}px;
-    color: ${theme.COLORS.WHITE};
-    font-family: ${theme.FONT_FAMILY.BOLD};
-
-`}
-`;
-
-const Icon = styled(MaterialIcons).attrs(({ theme }) => ({
-  size: 18,
-  color: theme.COLORS.WHITE
-}))``;
+  font-size: 16px;
+  color: ${({ theme }) => theme.COLORS.WHITE};
+  font-family: ${({ theme }) => theme.FONT_FAMILY.BOLD};
+`
