@@ -12,7 +12,7 @@ type HeaderProps = {
   type?: ButtonTypeStyleProps;
 }
 
-export function Header({ title, type = "GREEN" }: HeaderProps) {
+export function Header({ title, type = "good" }: HeaderProps) {
   const navigation = useNavigation()
 
   function handleGoBack() {

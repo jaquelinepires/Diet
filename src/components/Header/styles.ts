@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components/native'
 import { ArrowLeft } from 'phosphor-react-native';
 
-export type ButtonTypeStyleProps = 'GREEN' | 'GRAY';
+export type ButtonTypeStyleProps = 'default' | 'good' | 'bad'
 
 type Props = {
   type: ButtonTypeStyleProps;
@@ -12,9 +12,18 @@ export const HeaderContainer = styled.View<Props>`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: ${({ theme, type }) => type == 'GREEN' ? theme.COLORS.GREEN_LIGHT: theme.COLORS.GRAY_100};
   padding: 32px 24px;
-`
+  background-color: ${({ theme, type }) => {
+    switch (type) {
+      case 'good':
+        return theme.COLORS.GREEN_LIGHT
+      case 'bad':
+        return theme.COLORS.RED_LIGHT
+      default:
+        return theme.COLORS.GRAY_200
+    }
+  }};
+  `
 
 export const BackButton = styled.TouchableOpacity``
 
