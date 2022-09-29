@@ -19,8 +19,8 @@ export default {
     GRAY_100: '#EFF0F0',
 
     green: '#32b768',
-    green_light: '#2B7A4B',
-    green_dark: '#DAF2E4',
+    green_dark: '#2B7A4B',
+    green_light: '#DAF2E4',
 
     height: '#52665A',
     body_dark: '#738078',
