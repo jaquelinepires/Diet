@@ -4,14 +4,20 @@ import theme from './src/theme';
 import { StatusBar } from 'react-native';
 import { Routes } from './src/routes'
 import { Load } from './src/components/Load';
+import * as SplashScreen from 'expo-splash-screen';
+
 
 export default function App() {
- const [ fontsLoaded ] = useFonts({ Jost_400Regular, Jost_600SemiBold })
-  
+ const [ fontsLoaded ] = useFonts({
+   Jost_400Regular,
+   Jost_600SemiBold
+   })
+
  if (!fontsLoaded) {
   return null;
 }
 
+SplashScreen.preventAutoHideAsync();
  return (
    <ThemeProvider theme={theme}>
       <StatusBar 
@@ -19,7 +25,7 @@ export default function App() {
         backgroundColor= "transparent"
         translucent
         />
-      {fontsLoaded ? <Routes /> : <Load />}
+       {fontsLoaded ? <Routes /> : <Load />}
     </ThemeProvider>
   )
 }
