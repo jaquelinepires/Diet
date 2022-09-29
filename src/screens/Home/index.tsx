@@ -1,4 +1,4 @@
-import { Avatar, Container, Greeting, Header, HeaderContent, HomeContent, HomeList, HomeListHeader, HomeListHeaderButton, HomeListHeaderButtonIcon, HomeListHeaderButtonText, HomeListHeaderTitle, StatisticsButton, StatisticsButtonIcon, StatisticsButtonText, StatisticsButtonTitle, UserName } from './styles';
+import { Avatar, Container, Greeting, Header, HeaderContent,Title, UserName } from './styles';
 import { useNavigation } from "@react-navigation/native";
 import avatar  from '../../assets/avatar.png';
 import { LoadAnimation } from '../../components/LoadAnimation';
@@ -9,8 +9,8 @@ import { MealTypeProps } from '../../@types/meal';
 import { ListItem } from '../../components/ListItem';
 import ListHeader from '../../components/ListHeader';
 import { ListEmpty } from '../../components/ListEmpty';
-import ContentButton from '../../components/ButtonAddMeal';
 import { Highlight } from '../../components/Highlight';
+import { ButtonIcon } from '../../components/ButtonIcon';
 
 type Props = {
   title: string;
@@ -26,7 +26,7 @@ export function Home() {
     navigation.navigate('statistics')
   }
   function handleNavigateToCreateMeal() {
-    navigation.navigate('createMeal')
+    navigation.navigate('newMeal')
   }
 
   useEffect(() => {
@@ -34,9 +34,9 @@ export function Home() {
       const user = await AsyncStorage.getItem('@dietDaily:user')
       setUserName(user || '')
     }
-
     loadStorageUserName()
   }, [])
+
 
   const [list, setList] = useState<Props[]>([
   {
@@ -75,7 +75,6 @@ export function Home() {
 
   // if (isLoading) 
   //   return <LoadAnimation /> 
-  
     return (
     <Container>
       <Header>
@@ -85,17 +84,20 @@ export function Home() {
         </HeaderContent>
         <Avatar source={avatar}/>
       </Header>
-      <Highlight
-                title={90.86}
-                type='PRIMARY'
-                screenWithHeader={true}
-            />
-          <ContentButton
-                contentTitle='Refeições'
-                title='Nova refeição'
-                icon='add'
-            />
 
+        <Highlight
+                title={90.86}
+                type='GOOD'
+                screenWithHeader={true}
+                onPress={handleNavigateToStatistics}
+
+            />
+            <Title>Refeições</Title>
+          <ButtonIcon
+                title='Refeições'
+                icon='add'
+                onPress={handleNavigateToCreateMeal}
+            />
         <SectionList
                 sections={list}
                 keyExtractor={(item, index) => item.hours + index}

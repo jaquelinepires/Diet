@@ -1,6 +1,7 @@
+import { TouchableOpacityProps } from 'react-native';
 import { Container, HighlightTypeStyleProps, Icon, Subtitle, Title } from './styles';
 
-interface Props extends HighlightTypeStyleProps {
+type Props = HighlightTypeStyleProps & TouchableOpacityProps & {
   title: number;
 }
 

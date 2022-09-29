@@ -21,6 +21,7 @@ export const Header = styled.View`
 export const HeaderContent = styled.View`
   
 `;
+
 export const Greeting = styled.Text`
   font-size: 24px;
   font-family: ${({ theme }) => theme.FONT_FAMILY.REGULAR};
@@ -115,4 +116,10 @@ export const HomeListHeaderButtonText = styled.Text`
   margin-left: 12px;
 `;
 
-export const HomeList = styled.FlatList``;
+export const Title = styled.Text`
+    ${({ theme }) => css`
+        font-family: ${theme.FONT_FAMILY.REGULAR};
+        font-size: ${theme.FONT_SIZE.MD}px;
+        color: ${theme.COLORS.GRAY_100};
+    `};
+`
