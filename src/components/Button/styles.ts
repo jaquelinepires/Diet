@@ -1,5 +1,6 @@
 import { TouchableOpacity } from "react-native";
 import styled, {css} from "styled-components/native";
+import { MaterialIcons } from '@expo/vector-icons';
 
 export const Container = styled(TouchableOpacity)`
   width: 327px;
@@ -9,9 +10,7 @@ export const Container = styled(TouchableOpacity)`
   justify-content: center;
   align-items: center;
   border-radius: 6px;
-  padding: 16px;
-
-  
+  padding: 16px;  
 `;
 
 export const Title = styled.Text`
@@ -22,3 +21,8 @@ export const Title = styled.Text`
 
 `}
 `;
+
+const Icon = styled(MaterialIcons).attrs(({ theme }) => ({
+  size: 18,
+  color: theme.COLORS.WHITE
+}))``;
