@@ -25,13 +25,13 @@ export const HeaderContent = styled.View`
 export const Greeting = styled.Text`
   font-size: 24px;
   font-family: ${({ theme }) => theme.FONT_FAMILY.REGULAR};
-  color: ${({ theme }) => theme.COLORS.height};
+  color: ${({ theme }) => theme.COLORS.BODY};
 `;
 export const UserName = styled.Text`
   font-size: 24px;
   font-family: ${({ theme }) => theme.FONT_FAMILY.BOLD};
   line-height: 40px;
-  color: ${({ theme }) => theme.COLORS.height};
+  color: ${({ theme }) => theme.COLORS.BODY};
 `;
 export const Avatar = styled.Image`
   width: 48px;
@@ -43,7 +43,7 @@ export const IconSignOut = styled(SignOut)``;
 export const StatisticsButton = styled(TouchableOpacity)`
   width: 100%;
   padding: 20px 16px;
-  background-color: ${({ theme }) => theme.COLORS.green_light};
+  background-color: ${({ theme }) => theme.COLORS.GREEN_LIGHT};
   border-radius: 8px;
   align-items: center;
   justify-content: center;
@@ -60,7 +60,7 @@ export const StatisticsButtonIcon = styled(ArrowUpRight).attrs(({ theme }) => {
 
 export const StatisticsButtonTitle = styled.Text`
   ${({ theme }) => css`
-    color: ${theme.COLORS.height};
+    color: ${theme.COLORS.BODY};
     font-size: ${theme.FONT_SIZE.XXL}px;
     font-family: ${theme.FONT_FAMILY.BOLD};
   `};
@@ -92,7 +92,7 @@ export const HomeListHeaderTitle = styled.Text`
 `;
 
 export const HomeListHeaderButton = styled.TouchableOpacity`
-  background-color: ${({ theme }) => theme.COLORS.green};
+  background-color: ${({ theme }) => theme.COLORS.GREEN};
   flex-direction: row;
   align-items: center;
   justify-content: center;
@@ -117,9 +117,10 @@ export const HomeListHeaderButtonText = styled.Text`
 `;
 
 export const Title = styled.Text`
+  margin: 40px 0 8px 0;
     ${({ theme }) => css`
         font-family: ${theme.FONT_FAMILY.REGULAR};
         font-size: ${theme.FONT_SIZE.MD}px;
-        color: ${theme.COLORS.GRAY_100};
+        color: ${theme.COLORS.BODY};
     `};
 `

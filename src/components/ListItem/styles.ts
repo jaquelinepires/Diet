@@ -9,7 +9,7 @@ export const Container = styled.TouchableOpacity`
     margin: 4px 0; 
     height: 50px;
     border-radius: 6px;
-    border: 1px solid ${({ theme }) => theme.COLORS.GRAY_500};
+    border: 1px solid ${({ theme }) => theme.COLORS.GRAY_200};
     flex-direction: row;
     align-items: center;
 ` 
@@ -18,7 +18,7 @@ export const Hours = styled.Text`
     ${({ theme }) => css`
         font-family: ${theme.FONT_FAMILY.BOLD};
         font-size: ${theme.FONT_SIZE.SM}px;
-        color: ${theme.COLORS.body_dark};
+        color: ${theme.COLORS.BODY};
     `}
     margin: 14px;
 `
@@ -27,9 +27,9 @@ export const Title = styled.Text`
     ${({ theme }) => css`
         font-family: ${theme.FONT_FAMILY.REGULAR};
         font-size: ${theme.FONT_SIZE.MD}px;
-        color: ${theme.COLORS.body_dark}; 
+        color: ${theme.COLORS.BODY}; 
     `};
-    border-left: 1px solid ${({ theme }) => theme.COLORS.GRAY_400}
+    border-left: 1px solid ${({ theme }) => theme.COLORS.BODY}
 `
 
 export const Circle = styled.View<Props>`
@@ -39,5 +39,5 @@ export const Circle = styled.View<Props>`
     right: 14px;
     border-radius: 50%;
     background-color: ${({ theme, isActive }) => isActive ?
-    theme.COLORS.GREEN_LIGHT : theme.COLORS.RED_DARK}
+    theme.COLORS.GREEN_LIGHT : theme.COLORS.RED_LIGHT}
     `;

@@ -21,7 +21,7 @@ export const Form = styled.View`
 export const Title = styled.Text`
   font-size: 24px;
   text-align: center;
-  color: ${({ theme }) => theme.COLORS.height};
+  color: ${({ theme }) => theme.COLORS.BODY};
   line-height: 32px;
   font-family: ${({ theme }) => theme.FONT_FAMILY.BOLD};
   margin-top: 20px;
@@ -32,8 +32,8 @@ export const Emotion = styled.Text`
 `;
 export const Input = styled(TextInput)`
   border-bottom-width: 1px;
-  border-color: ${({ theme }) => theme.COLORS.gray};
-  color: ${({ theme }) => theme.COLORS.height};
+  border-color: ${({ theme }) => theme.COLORS.GRAY_200};
+  color: ${({ theme }) => theme.COLORS.BODY};
   width: 100%;
   margin-top: 50px;
   font-size: 18px;

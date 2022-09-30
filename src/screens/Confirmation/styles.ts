@@ -28,7 +28,7 @@ export const Subtitle = styled.Text`
   font-size: 17px;
   text-align: center;
   padding: 10px 0;
-  color: ${({ theme }) => theme.COLORS.height};
+  color: ${({ theme }) => theme.COLORS.BODY};
 
 `;
 export const Footer = styled.View`

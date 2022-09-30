@@ -1,11 +1,8 @@
 import { TouchableOpacityProps } from "react-native";
-import { Container,Title } from "./styles";
-import { Icon } from "../SignInSocialButton/styles";
+import { Container,Icon,Title } from "./styles";
 import { ButtonComponentTypeProps } from "../../@types/button";
 
-type Props = TouchableOpacityProps &  ButtonComponentTypeProps &{
-  title: string;
-}
+type Props = TouchableOpacityProps & ButtonComponentTypeProps 
 
 export function ButtonIcon({ title, icon, ...rest }: Props) {
   return (
