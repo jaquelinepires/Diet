@@ -6,7 +6,7 @@ export const Container = styled(TouchableOpacity)`
   justify-content: center;
   align-items: center;
   border-radius: 16px;
-  height: 56px;
+  height: 56px;;
 
 `;
 

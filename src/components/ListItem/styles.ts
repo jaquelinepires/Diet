@@ -28,8 +28,8 @@ export const Title = styled.Text`
         font-family: ${theme.FONT_FAMILY.REGULAR};
         font-size: ${theme.FONT_SIZE.MD}px;
         color: ${theme.COLORS.BODY}; 
-    `};
-    border-left: 1px solid ${({ theme }) => theme.COLORS.BODY}
+    `}
+    border-left: 1px solid ${({ theme }) => theme.COLORS.BODY};
 `
 
 export const Circle = styled.View<Props>`
