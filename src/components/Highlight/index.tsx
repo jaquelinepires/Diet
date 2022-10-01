@@ -3,12 +3,14 @@ import { Container, HighlightTypeStyleProps, Icon, Subtitle, Title } from './sty
 
 type Props = HighlightTypeStyleProps & TouchableOpacityProps & {
   title: number;
+  icon: string;
 }
 
-export function Highlight({ title, screenWithHeader, ...rest}: Props) {
+export function Highlight({ title,type, sideOfIcon, icon, ...rest}: Props) {
   return(
       <Container
-          screenWithHeader={screenWithHeader}
+        type={type}
+        sideOfIcon={sideOfIcon}
           {...rest}
       >
           <Title>
@@ -18,9 +20,9 @@ export function Highlight({ title, screenWithHeader, ...rest}: Props) {
               das refeições dentro da dieta
           </Subtitle>
           <Icon
-              name={screenWithHeader ? 'arrow-top-right' : 'arrow-left'}
-              screenWithHeader={screenWithHeader}
-              {...rest}
+           name={icon}
+           type={type}
+           sideOfIcon={sideOfIcon}
           />
       </Container>
   )

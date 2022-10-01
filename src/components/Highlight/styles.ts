@@ -4,7 +4,7 @@ import { TouchableOpacity } from "react-native";
 
 export type HighlightTypeStyleProps = {
   type: 'GOOD' | 'BAD';
-  screenWithHeader: boolean;
+  sideOfIcon: 'LEFT' | 'RIGHT';
 }
 
 type Props = HighlightTypeStyleProps;
@@ -14,10 +14,8 @@ export const Container = styled(TouchableOpacity)<Props>`
     border-radius: 6px;
     justify-content: center;
     align-items: center;
-    ${({ theme, type, screenWithHeader }) => css`
-        height: ${screenWithHeader ? 102 : 168}px;
-        padding-top: ${!screenWithHeader ? 20 : 0}px;
-        background-color: ${type === 'GOOD' ?
+    ${({ theme, type }) => css`
+    background-color: ${type === 'GOOD' ?
         theme.COLORS.GREEN_LIGHT : theme.COLORS.RED_LIGHT};
     `}
 `
@@ -39,19 +37,19 @@ export const Subtitle = styled.Text`
 `
 
 export const Icon = styled(MaterialCommunityIcons).attrs<Props>(({ theme, type }) => ({
-    size: 32,
+    size: 24,
     color: type === 'GOOD' ? theme.COLORS.GREEN_DARK : theme.COLORS.RED_DARK
 }))<Props>`
     position: absolute;
-    ${({ screenWithHeader }) => screenWithHeader ?
+    ${({ sideOfIcon }) => sideOfIcon === 'LEFT' ?
         css`
-            right: 4px;
-            top: 4px;
+            left: 10px;
+            top: 60px;
         `
         :
         css`
-            left: 10px;
-            top: 50px;
+            right: 8px;
+            top: 8px;
         `
     };
 `
