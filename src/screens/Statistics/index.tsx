@@ -22,7 +22,9 @@ export function Statistics() {
       <Highlight
         title={90.86}
         type='GOOD'
-        screenWithHeader={false}
+        icon='arrow-left'
+        sideOfIcon='LEFT'
+        style={{ height: 168, paddingTop: 20 }}
         onPress={handleBackToHome}
       />
 

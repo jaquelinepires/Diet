@@ -54,7 +54,9 @@ export function NewMeal() {
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
     <CreateMealContainer>
-      <Header title='Nova refeição' type="good"/>
+      <Header 
+        title='Nova refeição' 
+        type="DEFAULT"/>
       <CreateMealContent>
 
     <Form>
