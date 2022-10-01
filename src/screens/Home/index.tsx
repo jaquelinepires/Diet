@@ -88,8 +88,10 @@ export function Home() {
         <Highlight
                 title={90.86}
                 type='GOOD'
-                screenWithHeader={true}
+                icon='arrow-top-right'
+                sideOfIcon='RIGHT'
                 onPress={handleNavigateToStatistics}
+                style={{ height: 102 }}
 
             />
             <Title>Refeições</Title>

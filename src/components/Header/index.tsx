@@ -1,18 +1,18 @@
 import { useNavigation } from '@react-navigation/native';
-import { HeaderContainer,
-  BackButton,
-  BackIcon,
-  PageTitle, 
-  ButtonTypeStyleProps
+import { TouchableOpacityProps } from 'react-native';
+import { 
+  Container,
+  Icon,
+  Title,
+  MiniHighlightTypeStyleProps
   } 
 from './styles';
 
-type HeaderProps = {
+type Props = MiniHighlightTypeStyleProps & TouchableOpacityProps & {
   title: string;
-  type?: ButtonTypeStyleProps;
 }
 
-export function Header({ title, type = "good" }: HeaderProps) {
+export function Header({ title, type, ...rest }: Props) {
   const navigation = useNavigation()
 
   function handleGoBack() {
@@ -20,11 +20,11 @@ export function Header({ title, type = "good" }: HeaderProps) {
   }
 
   return (
-    <HeaderContainer type={type}>
-      <BackButton onPress={handleGoBack}>
-        <BackIcon  />
-      </BackButton>
-      <PageTitle>{title}</PageTitle>
-    </HeaderContainer>
+    <Container type={type} {...rest}>     
+     <Icon onPress={handleGoBack}/>
+     <Title>
+        {title}
+     </Title>
+    </Container>
   );
 }
