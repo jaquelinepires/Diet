@@ -5,6 +5,7 @@ import { StatusBar } from 'react-native';
 import { Routes } from './src/routes'
 import { Load } from './src/components/Load';
 import * as SplashScreen from 'expo-splash-screen';
+import { MealsContextProvider } from './src/Contexts/MealsContext';
 
 
 export default function App() {
@@ -20,12 +21,14 @@ export default function App() {
 SplashScreen.preventAutoHideAsync();
  return (
    <ThemeProvider theme={theme}>
+      <MealsContextProvider>
       <StatusBar 
         barStyle="dark-content"
         backgroundColor= "transparent"
         translucent
         />
        {fontsLoaded ? <Routes /> : <Load />}
+       </MealsContextProvider>
     </ThemeProvider>
   )
 }
