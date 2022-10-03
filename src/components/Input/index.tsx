@@ -9,7 +9,7 @@ export function Input({...rest}: TextInputProps) {
 
   return (
     <Container 
-      placeholderTextColor={COLORS.height}
+      placeholderTextColor={COLORS.BODY}
     {...rest}/>
   );
 }

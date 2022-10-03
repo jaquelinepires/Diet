@@ -6,7 +6,7 @@ export const Container = styled(TextInput)`
   padding: 14px;
   
   ${({ theme }) => css`
-    color: ${theme.COLORS.height};
+    color: ${theme.COLORS.BODY};
     border: 1px solid ${theme.COLORS.GRAY_100};
     font-family: ${theme.FONT_FAMILY.REGULAR};
     font-size: ${theme.FONT_SIZE.MD}px;

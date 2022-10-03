@@ -1,5 +1,9 @@
 import { SafeAreaView } from 'react-native-safe-area-context';
-import styled from 'styled-components/native';
+import styled, {css} from 'styled-components/native';
+
+interface CreateMealFeedbackProps {
+  isInDiet: boolean
+}
 
 export const Container = styled(SafeAreaView)`
   flex: 1;
@@ -7,13 +11,15 @@ export const Container = styled(SafeAreaView)`
   align-items: center;
  
 `;
-export const Title = styled.Text`
-  font-size: ${({ theme }) => theme.FONT_SIZE.XL}px;
-  font-family: ${({ theme }) => theme.FONT_FAMILY.BOLD};
-  color: ${({ theme }) => theme.COLORS.GREEN_DARK};
+export const Title = styled.Text<CreateMealFeedbackProps>`
+  ${({ theme, isInDiet }) => css`
+    color: ${isInDiet ? theme.COLORS.GREEN_DARK : theme.COLORS.RED_DARK};
+    font-size: ${theme.FONT_SIZE.XL}px;
+    font-family: ${theme.FONT_FAMILY.BOLD};
+    `};
   margin-bottom: 8px;
-  margin-top: 100px;
-`;
+  `;
+
 export const Subtitle = styled.Text`
   font-size: ${({ theme }) => theme.FONT_SIZE.MD}px;
 `;
@@ -23,5 +29,5 @@ export const Span = styled.Text`
 
 `;
 export const ImageFeedback = styled.Image`
- margin: 40px 0 48px 0;  
+ margin: 32px 0;
 `;

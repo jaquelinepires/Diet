@@ -2,11 +2,11 @@ import { TouchableOpacityProps } from 'react-native';
 import { Container, HighlightTypeStyleProps, Icon, Subtitle, Title } from './styles';
 
 type Props = HighlightTypeStyleProps & TouchableOpacityProps & {
-  title: number;
+  number: string;
   icon: string;
 }
 
-export function Highlight({ title,type, sideOfIcon, icon, ...rest}: Props) {
+export function Highlight({ number,type, sideOfIcon, icon, ...rest}: Props) {
   return(
       <Container
         type={type}
@@ -14,7 +14,7 @@ export function Highlight({ title,type, sideOfIcon, icon, ...rest}: Props) {
           {...rest}
       >
           <Title>
-              {title}
+              {number}
           </Title>
           <Subtitle>
               das refeições dentro da dieta

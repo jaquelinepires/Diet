@@ -11,6 +11,8 @@ import ListHeader from '../../components/ListHeader';
 import { ListEmpty } from '../../components/ListEmpty';
 import { Highlight } from '../../components/Highlight';
 import { ButtonIcon } from '../../components/ButtonIcon';
+import { useMealsContext } from '../../Contexts/MealsContext';
+import { percentageFormatter } from '../../utils/formatter';
 
 type Props = {
   title: string;
@@ -18,6 +20,8 @@ type Props = {
 }
 
 export function Home() {
+  const { mealsInDietPercentage } = useMealsContext()
+
   const [isLoading, setIsLoading] = useState(false);
   const [ userName, setUserName ] = useState<string>()
   const navigation = useNavigation()
@@ -86,7 +90,7 @@ export function Home() {
       </Header>
 
         <Highlight
-                title={90.86}
+                number={percentageFormatter(mealsInDietPercentage)}
                 type='GOOD'
                 icon='arrow-top-right'
                 sideOfIcon='RIGHT'
